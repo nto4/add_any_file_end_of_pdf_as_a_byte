@@ -1,5 +1,4 @@
 from optparse import OptionParser
-from time_util import TimeUtil
 import binascii
 import os
 
@@ -33,9 +32,7 @@ def put(args):
                 patchedFile.write(binascii.hexlify(bytes(sourceFileName + DELIMITER, ENCODING)))
                 print("!!! ", sourceFileName, "hidden! in ", targetFile )
             index += 1
-    
-    util = TimeUtil()
-    util.setModTime( patchedFileName, util.getModTime(targetFile) )
+
 
     
 # extract hidden file    
